@@ -4,11 +4,10 @@ import javax.swing.JDialog;
 import javax.swing.WindowConstants;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * @autor rbuegar928
+ * @version 1.0
+ * Clase para realizar las apuestas.
  */
-
 public class Apuesta extends javax.swing.JFrame {
 
    
@@ -129,23 +128,34 @@ public class Apuesta extends javax.swing.JFrame {
         partidoNuevo.setTitle("Agregar nuevo partido");
         partidoNuevo.setVisible(Boolean.TRUE);
     }//GEN-LAST:event_bNuevoActionPerformed
-
+/*
+ * Función que sirve para eliminar un partido.
+ */
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
         borraPartido(listaQuiniela.getSelectedIndex());
     }//GEN-LAST:event_bEliminarActionPerformed
-
+/*
+ * Función que sirve para dejar el modelo como un modelo vacío
+ */
     private void bResetearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bResetearActionPerformed
         DefaultListModel modelovacio = new DefaultListModel();
         this.listaQuiniela.setModel(modelovacio);
         this.listaResultados.setModel(modelovacio);
     }//GEN-LAST:event_bResetearActionPerformed
 
-   
+/*
+* Genera un número entero aleatorio entre dos valores.
+* @param n1 Valor mínimo
+* @param n2 Valor máximo
+* @return Número aleatorio entre n1 y n2
+*/   
     public int cualquiera(int n1, int n2)
     {
         return (int)Math.floor((Math.random()*(n2-n1+1) + n1));
     }
-    
+/*
+ * Función que sirve para realizar una quiniela.
+ */
     private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
         DefaultListModel modeloquinielaresuelta = new DefaultListModel();
 
@@ -172,7 +182,9 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modeloquinielaresuelta);
     }//GEN-LAST:event_bRealizarActionPerformed
 
-    
+ /*
+ * Crear un partido nuevo
+ */
     public void partidoNuevo(String partido)
     {
         DefaultListModel modelonuevo = new DefaultListModel();
@@ -185,7 +197,9 @@ public class Apuesta extends javax.swing.JFrame {
 
         this.listaQuiniela.setModel(modelonuevo);
     }
-    
+/*
+ * Borrar un partido.
+ */   
   
     public void borraPartido(int indice)
     {
