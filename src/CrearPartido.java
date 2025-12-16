@@ -1,8 +1,11 @@
 
 import java.awt.event.KeyEvent;
 
-
-
+/*
+ * @autor rbuegar928
+ * @version 1.0
+ * Clase para crear partidos.
+ */
 public class CrearPartido extends javax.swing.JFrame
 {
    
@@ -70,17 +73,24 @@ public class CrearPartido extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+/*
+ * Función que sirve para añadir un partido nuevo.
+ */
     public void añadePartido(String p)
     {
         v.partidoNuevo(p);
         tPartido.setText("");
         tPartido.requestFocus();
     }
-    
+/*
+ * Añadir un partido introduciendo texto.
+ */  
     private void añadePartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadePartidoActionPerformed
         añadePartido(tPartido.getText());
     }//GEN-LAST:event_añadePartidoActionPerformed
-
+/*
+ * Añadir un partido introduciendo KeyCode.
+ */  
     private void tPartidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tPartidoKeyPressed
         if( evt.getKeyCode() == KeyEvent.VK_ENTER )
         {
